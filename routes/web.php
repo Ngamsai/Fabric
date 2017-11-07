@@ -17,6 +17,8 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->get('/statusCheck','statusController@statusInput');
+
 $router->get('/department/{id}', function($id){
 	return Department::where('departmentID','=',$id)->first();
 });
